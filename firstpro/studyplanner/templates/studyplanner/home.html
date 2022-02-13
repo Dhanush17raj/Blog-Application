@@ -1,0 +1,23 @@
+{% extends "studyplanner/base.html" %}
+{% block content %}
+<br>
+<h3>The details of the authors are given below:</h3>
+<br>
+<br>
+ {% for post in posts %}
+    <article class="media content-section">
+        <div class="media-body">
+        <div class="article-metadata">
+         
+          <a class="mr-2" href="#" style=" color: rgb(165, 50, 50)">{{ post.author }}</a>
+        <small class="text-muted"  style = "font-size: 20px; padding-top: 100px; color: rgb(52, 10, 131);">{{ post.date_posted|date:"F d, Y" }}</small>
+      </div>
+      <h2><a class="article-title" href="#" style="padding-top: 30px; color: rgb(160, 28, 105);">{{ post.title }}</a></h2>
+      <p class="article-content" style="padding-top: 10px;">{{ post.content }}</p>
+      <!-- s<img style="width: 250px; height: 250px; padding-left: 40px;" src="{{ post.link }}" alt=""> -->
+    </div> 
+  </article>
+ {% endfor %}
+     
+{% endblock content %}
+    
